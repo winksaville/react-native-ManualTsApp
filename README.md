@@ -35,3 +35,28 @@ info All dependencies
 └─ typescript@3.7.5
 Done in 3.24s.
 ```
+## Add tsconfig.json in root of project
+```
+(rn-py38) wink@wink-desktop:~/prgs/react-native/ManualTsApp (master)
+$ cat tsconfig.json 
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext"
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
+}
+```
