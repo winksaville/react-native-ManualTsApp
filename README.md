@@ -60,3 +60,12 @@ $ cat tsconfig.json
   ]
 }
 ```
+## Create jest.config.js so Jest uses TypeScript
+```
+(rn-py38) wink@wink-desktop:~/prgs/react-native/ManualTsApp (master)
+$ cat jest.config.js 
+module.exports = {
+  preset: 'react-native',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+};
+```
