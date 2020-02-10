@@ -69,3 +69,48 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };
 ```
+## Add Hello.tsx and simplified App.js
+
+Got [Hello.tsx](https://facebook.github.io/react-native/docs/typescript#what-does-react-native--typescript-look-like) and made some slight tweaks:
+```
+(rn-py38) wink@wink-desktop:~/prgs/react-native/ManualTsApp2 (master)
+$ diff -U 1 ../Hello2.tsx Hello.tsx
+--- ../Hello2.tsx	2020-02-10 13:25:36.243961422 -0800
++++ Hello.tsx	2020-02-10 15:36:42.083342325 -0800
+@@ -9,3 +9,3 @@
+ 
+-const Hello: React.FC<Props> = (props) => {
++export const Hello: React.FC<Props> = (props) => {
+     const [enthusiasmLevel, setEnthusiasmLevel] = React.useState(props.enthusiasmLevel);
+@@ -44,3 +44,2 @@
+     );
+-    }
+ }
+```
+And then simplified App.js to:
+```
+(rn-py38) wink@wink-desktop:~/prgs/react-native/ManualTsApp2 (master)
+$ cat -n App.js
+     1	import React from 'react';
+     2	import {
+     3	  SafeAreaView,
+     4	} from 'react-native';
+     5	
+     6	import {Hello} from './Hello';
+     7	const initialEnthusim=2
+     8	
+     9	const App: () => React$Node = () => {
+    10	  return (
+    11	    <>
+    12	      <SafeAreaView>
+    13	          <Hello name="Wink" enthusiasmLevel={initialEnthusim}/>
+    14	      </SafeAreaView>
+    15	    </>
+    16	  );
+    17	};
+    18	
+    19	export default App;
+```
+Got help from rahsheen on the Reactiflus discord channel
+[first post here](https://discordapp.com/channels/102860784329052160/469170673533583361/676550171311603712).
+out how to link to the posts :(
