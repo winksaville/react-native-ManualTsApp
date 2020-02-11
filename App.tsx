@@ -6,7 +6,7 @@ import {
 import {Hello} from './Hello';
 const initialEnthusim=2
 
-const App: () => React$Node = () => {
+export const App: () => React.ReactNode = () => {
   return (
     <>
       <SafeAreaView>
@@ -15,5 +15,3 @@ const App: () => React$Node = () => {
     </>
   );
 };
-
-export default App;

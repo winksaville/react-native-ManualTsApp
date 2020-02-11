@@ -114,3 +114,38 @@ $ cat -n App.js
 Got help from rahsheen on the Reactiflus discord channel
 [first post here](https://discordapp.com/channels/102860784329052160/469170673533583361/676550171311603712).
 out how to link to the posts :(
+
+## Convert App.js to App.tsx
+
+Renamed plus two tweeaks:
+```
+$ diff -U 1 App.js App.tsx
+--- App.js	2020-02-10 20:45:00.548987157 -0800
++++ App.tsx	2020-02-10 20:44:03.213540191 -0800
+@@ -8,3 +8,3 @@
+ 
+-const App: () => React$Node = () => {
++export const App: () => React.ReactNode = () => {
+   return (
+@@ -17,3 +17 @@
+ };
+-
+-export default App;
+```
+And tweak index.js:
+```
+$ git diff index.js
+diff --git a/index.js b/index.js
+index a850d03..02e824c 100644
+--- a/index.js
++++ b/index.js
+@@ -3,7 +3,7 @@
+  */
+ 
+ import {AppRegistry} from 'react-native';
+-import App from './App';
++import {App} from './App';
+ import {name as appName} from './app.json';
+ 
+ AppRegistry.registerComponent(appName, () => App);
+```
