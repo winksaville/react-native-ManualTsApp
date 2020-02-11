@@ -3,7 +3,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import {Hello} from './Hello';
+import {Hello} from './components/Hello';
 const initialEnthusim=2
 
 export const App: () => React.ReactNode = () => {

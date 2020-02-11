@@ -149,3 +149,5 @@ index a850d03..02e824c 100644
  
  AppRegistry.registerComponent(appName, () => App);
 ```
+## Move Hello.tsx to `components/`
+This is where it was supposed to be
